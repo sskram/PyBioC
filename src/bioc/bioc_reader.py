@@ -1,6 +1,6 @@
 __all__ = ['BioCReader']
 
-import StringIO
+from io import StringIO
 
 from lxml import etree
 
@@ -86,7 +86,7 @@ class BioCReader:
                                     passage)
             else:
                 # Is the (optional) text element available?
-		try:
+                try:
                     passage.text = passage_elem.xpath('text')[0].text
                 except:
                     pass
